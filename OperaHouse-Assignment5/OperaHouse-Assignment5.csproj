@@ -52,11 +52,12 @@
     <Compile Include="Comparers.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="EventList.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="EventsDB.cs" />
+    <Compile Include="Overview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Overview.Designer.cs">
+      <DependentUpon>Overview.cs</DependentUpon>
     </Compile>
     <Compile Include="Performer.cs" />
     <Compile Include="Program.cs" />
@@ -68,8 +69,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Overview.resx">
+      <DependentUpon>Overview.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
