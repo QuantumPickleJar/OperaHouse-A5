@@ -45,6 +45,10 @@ namespace OperaHouse_Assignment5
 
         // As a user, I want to be able to select an event to see more details and make
         //  changes so that the events can be updated to reflect any changes.
+        public void EventDetails()
+        {
+
+        }
 
         // As a ticket agent, I want to be able to hide sold-out performances, so I don’t try to
         // sell tickets for them.
@@ -52,7 +56,7 @@ namespace OperaHouse_Assignment5
         {
 
         }
-        
+
         // As a ticket agent, I want to be able to see performances for a specific performer to
         // make it easier to find what I’m looking for.
         // [ Satisfied by TestSearchByPerformer ] 
@@ -60,7 +64,7 @@ namespace OperaHouse_Assignment5
         // As a ticket agent, I want to be able to see all the tickets for an event with their
         //  status (sold/unsold) so that I can sell and return individual tickets.
         // TODO: ticket-viewer
-       
+
         // As a manager, I want to be able to add and remove events from the system, so the
         //  list of events reflects all events we are scheduled to show.
 
@@ -70,5 +74,5 @@ namespace OperaHouse_Assignment5
 
             // assert that the count of events is one less than it was before
         }
-    
+    }
 }

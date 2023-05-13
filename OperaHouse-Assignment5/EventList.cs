@@ -139,5 +139,10 @@ namespace OperaHouse_Assignment5
         {
             events.Sort(new PerformerDateComparer());
         }
+
+        public bool Contains(Event e)
+        {
+            return events.Contains(e);
+        }
     }
 }

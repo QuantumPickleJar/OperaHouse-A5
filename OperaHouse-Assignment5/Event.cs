@@ -37,6 +37,24 @@ namespace OperaHouse_Assignment5
 
         public List<Ticket> tickets;
 
+        public Event(string id, string title, Performer performer, int numTickets, double ticketPrice, DateTime eventTime, int durationMinutes, bool concessionSales, Stage stage)
+        {
+            this.Stage = stage;
+           //this = new Event(id, title, performer, numTickets, ticketPrice, eventTime, durationMinutes, concessionSales);
+            this.Title = title;
+            this.Performer = performer;
+            this.totalNumTickets = numTickets;
+            this.regularTicketPrice = ticketPrice;
+            this.EventTime = eventTime;
+            this.DurationMinutes = durationMinutes;
+            this.ConcessionSales = concessionSales;
+            tickets = new List<Ticket>();
+            for (int i = 1; i <= numTickets; i++)
+            {
+                tickets.Add(new Ticket(i, ticketPrice));
+            }
+        }
+
         public Event(string id, string title, Performer performer, int numTickets, double ticketPrice, DateTime eventTime, int durationMinutes, bool concessionSales)
         {
             this.id = id;

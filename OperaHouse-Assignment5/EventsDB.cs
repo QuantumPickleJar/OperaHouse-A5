@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using OperaHouse_Assignment5;
-
+using static OperaHouse_Assignment5.EventList;
 namespace OperaHouse_Assignment5
 {
     internal class EventsDB
@@ -15,10 +14,18 @@ namespace OperaHouse_Assignment5
             new Performer("Edna Polaski", 4000),         // performers[2]
             new Performer("Osawa High", 0)         // performers[3]
         };
-
-        private Stage mainStg = new Stage("Main Stage", 100, 150);
-        private Stage loungeStg = new Stage("The Lounge", 75, 50);
         
+        private static Stage mainStg = new Stage("Main Stage", 100, 150);
+        private static Stage loungeStg = new Stage("The Lounge", 75, 50);
+
+        public static List<Stage> PopulateStages() {
+            return new List<Stage> { mainStg, loungeStg };
+        }
+
+        public static List<Performer> PopulatePerfomers()
+        {
+            return performers.ToList();
+        }
 
         public static List<Event> PopulateEvents()
         {
@@ -31,9 +38,11 @@ namespace OperaHouse_Assignment5
             Event jimShow = new Event("3", "Jimony's Comedy Pavillion", performers[0], 160, 33, new DateTime(2015, 3, 4, 19, 45, 0), 120, false);
             Event osawaShow = new Event("4", "Of Mice and Men", performers[1], 160, 33, new DateTime(2015, 3, 4, 19, 45, 0), 120, false);
             
-            events = new EventList();
+            events.AddRange(new List<Event> { shrek, ednaShow, jimShow, osawaShow });
+            
+            EventList eList = new EventList();
+            events.ForEach(x => eList.AddEvent(x));
 
-            events.AddEvent(new List<Event> { shrek, deathShow, belushiShow });
 
             return events;
         }

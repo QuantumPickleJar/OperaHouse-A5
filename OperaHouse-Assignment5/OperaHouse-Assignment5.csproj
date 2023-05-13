@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcceptCriteraTest.cs" />
     <Compile Include="Comparers.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="EventList.cs" />
@@ -60,13 +59,14 @@
       <DependentUpon>Overview.cs</DependentUpon>
     </Compile>
     <Compile Include="Performer.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Progam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stage.cs" />
     <Compile Include="Ticket.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Properties\DataSources\OperaHouse_Assignment5.EventList.datasource" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Overview.resx">

@@ -66,6 +66,7 @@
             this.lstEvents.Size = new System.Drawing.Size(289, 342);
             this.lstEvents.TabIndex = 0;
             this.lstEvents.Tag = "";
+            this.lstEvents.SelectedIndexChanged += new System.EventHandler(this.lstEvents_SelectedIndexChanged);
             // 
             // label1
             // 
