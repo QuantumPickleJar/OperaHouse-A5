@@ -54,6 +54,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cbxStage = new System.Windows.Forms.ComboBox();
             this.cbxPerformer = new System.Windows.Forms.ComboBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.gbxFilter.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -309,11 +310,23 @@
             this.cbxPerformer.TabIndex = 22;
             this.cbxPerformer.SelectedIndexChanged += new System.EventHandler(this.cbxPerformer_SelectedIndexChanged);
             // 
+            // btnSave
+            // 
+            this.btnSave.Enabled = false;
+            this.btnSave.Location = new System.Drawing.Point(214, 383);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(92, 20);
+            this.btnSave.TabIndex = 7;
+            this.btnSave.Text = "Update Event";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnMinus_Click);
+            // 
             // frmOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(530, 415);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnMinus);
             this.Controls.Add(this.btnPlus);
             this.Controls.Add(this.label2);
@@ -362,5 +375,6 @@
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbxPerfFilter;
+        private System.Windows.Forms.Button btnSave;
     }
 }

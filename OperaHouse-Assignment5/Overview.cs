@@ -15,16 +15,19 @@ namespace OperaHouse_Assignment5
     public partial class frmOverview : Form
     {
         private List<Event> events;
+        private List<Stage> stages;
         private List<Performer> performers; // we need to store performers somewhere to be able to sort by them within the drop-down
-        private BindingSource perfBind; // since multiple controls refer to this collection, make it class-level
+        private BindingSource perfBind, stageBind; // since multiple controls refer to this collection, make it class-level
 
         public frmOverview()
         {
-
+            // load from DB 
             performers = EventsDB.PopulatePerfomers();
-            events = EventsDB.PopulateEvents();     // load from DB 
-
-            perfBind = new BindingSource();
+            events = EventsDB.PopulateEvents();     
+            stages = EventsDB.PopulateStages();
+            
+            perfBind = new BindingSource(performers, "Name");
+            stageBind = new BindingSource(stages, "StageName");
 
             InitializeComponent();
             RefreshEvents();
@@ -38,14 +41,14 @@ namespace OperaHouse_Assignment5
             cbxStage.SelectedIndex = -1;
 
             // if something is selected
-            if (lstEvents.SelectedIndex >= 0)
+            if (lstEvents.SelectedIndex > -1)
             {
-                // Bind the Event.Performer combobox to class-level var
-                perfBind.DataSource = performers;
+                // Bind the comboboxes to class-level binding sources
                 cbxPerformer.DataSource = perfBind.DataSource;
-                cbxPerformer.DisplayMember = "Name";
+                cbxPerformer.DisplayMember = perfBind.DataMember;
 
-                // TODO: populate stage
+                cbxStage.DataSource = stageBind.DataSource;
+                cbxStage.DisplayMember = stageBind.DataMember;
 
                 // Love when Intellicode suggests syntax you didn't know of!
                 Event selected = lstEvents.SelectedItem as Event;
