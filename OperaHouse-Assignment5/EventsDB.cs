@@ -35,7 +35,7 @@ namespace OperaHouse_Assignment5
             Event shrek = new Event("1", "Shrek", performers[3], 150, 12, new DateTime(2015, 4, 18, 19, 30, 0), 60, true, mainStg);
             Event ednaShow = new Event("2", "Edna's Excellent Embarkment", performers[2], 200, 20, new DateTime(2015, 4, 25, 19, 0, 0), 90, true, mainStg);
             Event jimShow = new Event("3", "Jimony's Comedy Pavillion", performers[0], 160, 33, new DateTime(2015, 3, 4, 19, 45, 0), 120, false, loungeStg);
-            Event osawaShow = new Event("4", "Of Mice and Men", performers[1], 160, 33, new DateTime(2015, 3, 4, 19, 45, 0), 120, false, loungeStg);
+            Event osawaShow = new Event("4", "Of Mice and Men", performers[1], 0, 33, new DateTime(2015, 3, 4, 19, 45, 0), 120, false, loungeStg);
             
             events.AddRange(new List<Event> { shrek, ednaShow, jimShow, osawaShow });
             

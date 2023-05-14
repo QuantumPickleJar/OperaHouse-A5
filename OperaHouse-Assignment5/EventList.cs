@@ -91,7 +91,7 @@ namespace OperaHouse_Assignment5
             List<Event> result = new List<Event>();
             foreach (Event e in events)
             {
-                if (!e.IsSOldOut)
+                if (!e.IsSoldOut)
                     result.Add(e);
             }
             return result;

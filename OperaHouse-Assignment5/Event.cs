@@ -157,7 +157,7 @@ namespace OperaHouse_Assignment5
             return this.EventTime.CompareTo(other.EventTime);
         }
 
-        public bool IsSOldOut
+        public bool IsSoldOut
         {
             get {
                 //throw new NotImplementedException();

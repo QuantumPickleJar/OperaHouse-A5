@@ -50,11 +50,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtTickets = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkConcessions = new System.Windows.Forms.CheckBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cbxStage = new System.Windows.Forms.ComboBox();
             this.cbxPerformer = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnTickets = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtPrice = new System.Windows.Forms.TextBox();
             this.gbxFilter.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -62,9 +66,9 @@
             // lstEvents
             // 
             this.lstEvents.FormattingEnabled = true;
-            this.lstEvents.Location = new System.Drawing.Point(17, 35);
+            this.lstEvents.Location = new System.Drawing.Point(17, 44);
             this.lstEvents.Name = "lstEvents";
-            this.lstEvents.Size = new System.Drawing.Size(289, 342);
+            this.lstEvents.Size = new System.Drawing.Size(289, 303);
             this.lstEvents.TabIndex = 0;
             this.lstEvents.Tag = "";
             this.lstEvents.SelectedIndexChanged += new System.EventHandler(this.lstEvents_SelectedIndexChanged);
@@ -84,7 +88,7 @@
             this.gbxFilter.Controls.Add(this.chkOpenShows);
             this.gbxFilter.Controls.Add(this.chkPerformer);
             this.gbxFilter.Controls.Add(this.cbxPerfFilter);
-            this.gbxFilter.Location = new System.Drawing.Point(312, 86);
+            this.gbxFilter.Location = new System.Drawing.Point(312, 56);
             this.gbxFilter.Name = "gbxFilter";
             this.gbxFilter.Size = new System.Drawing.Size(199, 59);
             this.gbxFilter.TabIndex = 2;
@@ -125,7 +129,7 @@
             // 
             // btnDate
             // 
-            this.btnDate.Location = new System.Drawing.Point(312, 57);
+            this.btnDate.Location = new System.Drawing.Point(312, 27);
             this.btnDate.Name = "btnDate";
             this.btnDate.Size = new System.Drawing.Size(75, 23);
             this.btnDate.TabIndex = 3;
@@ -134,7 +138,7 @@
             // 
             // btnTitle
             // 
-            this.btnTitle.Location = new System.Drawing.Point(393, 57);
+            this.btnTitle.Location = new System.Drawing.Point(393, 27);
             this.btnTitle.Name = "btnTitle";
             this.btnTitle.Size = new System.Drawing.Size(75, 23);
             this.btnTitle.TabIndex = 4;
@@ -145,7 +149,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(312, 35);
+            this.label2.Location = new System.Drawing.Point(312, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 17);
             this.label2.TabIndex = 5;
@@ -153,7 +157,7 @@
             // 
             // btnPlus
             // 
-            this.btnPlus.Location = new System.Drawing.Point(17, 383);
+            this.btnPlus.Location = new System.Drawing.Point(17, 353);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Size = new System.Drawing.Size(35, 20);
             this.btnPlus.TabIndex = 6;
@@ -163,7 +167,7 @@
             // 
             // btnMinus
             // 
-            this.btnMinus.Location = new System.Drawing.Point(61, 383);
+            this.btnMinus.Location = new System.Drawing.Point(61, 353);
             this.btnMinus.Name = "btnMinus";
             this.btnMinus.Size = new System.Drawing.Size(35, 20);
             this.btnMinus.TabIndex = 7;
@@ -225,7 +229,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 174);
+            this.label9.Location = new System.Drawing.Point(6, 210);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(64, 13);
             this.label9.TabIndex = 18;
@@ -233,7 +237,7 @@
             // 
             // dtpEventTime
             // 
-            this.dtpEventTime.Location = new System.Drawing.Point(9, 190);
+            this.dtpEventTime.Location = new System.Drawing.Point(9, 226);
             this.dtpEventTime.Name = "dtpEventTime";
             this.dtpEventTime.Size = new System.Drawing.Size(190, 20);
             this.dtpEventTime.TabIndex = 19;
@@ -241,7 +245,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 152);
+            this.label3.Location = new System.Drawing.Point(5, 186);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 13);
             this.label3.TabIndex = 20;
@@ -249,20 +253,23 @@
             // 
             // txtTickets
             // 
-            this.txtTickets.Location = new System.Drawing.Point(136, 149);
+            this.txtTickets.Location = new System.Drawing.Point(136, 183);
             this.txtTickets.Name = "txtTickets";
             this.txtTickets.Size = new System.Drawing.Size(63, 20);
             this.txtTickets.TabIndex = 21;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkConcessions);
             this.groupBox1.Controls.Add(this.txtTitle);
             this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.txtPrice);
             this.groupBox1.Controls.Add(this.cbxStage);
             this.groupBox1.Controls.Add(this.cbxPerformer);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.dtpEventTime);
             this.groupBox1.Controls.Add(this.txtTickets);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.lblID);
             this.groupBox1.Controls.Add(this.txtDuration);
@@ -270,12 +277,25 @@
             this.groupBox1.Controls.Add(this.Performer);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(312, 174);
+            this.groupBox1.Location = new System.Drawing.Point(312, 121);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(203, 229);
+            this.groupBox1.Size = new System.Drawing.Size(203, 252);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Event Details";
+            // 
+            // chkConcessions
+            // 
+            this.chkConcessions.AutoSize = true;
+            this.chkConcessions.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkConcessions.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkConcessions.Location = new System.Drawing.Point(73, 209);
+            this.chkConcessions.Name = "chkConcessions";
+            this.chkConcessions.Size = new System.Drawing.Size(124, 17);
+            this.chkConcessions.TabIndex = 25;
+            this.chkConcessions.Text = "Concessions Offered";
+            this.chkConcessions.UseVisualStyleBackColor = true;
+            this.chkConcessions.CheckedChanged += new System.EventHandler(this.chkConcessions_CheckedChanged);
             // 
             // txtTitle
             // 
@@ -313,7 +333,7 @@
             // btnSave
             // 
             this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(214, 383);
+            this.btnSave.Location = new System.Drawing.Point(214, 353);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(92, 20);
             this.btnSave.TabIndex = 7;
@@ -321,11 +341,41 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnMinus_Click);
             // 
+            // btnTickets
+            // 
+            this.btnTickets.Enabled = false;
+            this.btnTickets.Location = new System.Drawing.Point(116, 353);
+            this.btnTickets.Name = "btnTickets";
+            this.btnTickets.Size = new System.Drawing.Size(92, 20);
+            this.btnTickets.TabIndex = 7;
+            this.btnTickets.Text = "View Tickets";
+            this.btnTickets.UseVisualStyleBackColor = true;
+            this.btnTickets.Click += new System.EventHandler(this.btnTickets_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(5, 162);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 13);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Ticket Price:";
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txtPrice.Location = new System.Drawing.Point(136, 157);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(61, 20);
+            this.txtPrice.TabIndex = 5;
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
+            // 
             // frmOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 415);
+            this.ClientSize = new System.Drawing.Size(530, 379);
+            this.Controls.Add(this.btnTickets);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnMinus);
             this.Controls.Add(this.btnPlus);
@@ -338,6 +388,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmOverview";
             this.Text = "Grand Opera System";
+            this.Load += new System.EventHandler(this.frmOverview_Load);
             this.gbxFilter.ResumeLayout(false);
             this.gbxFilter.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -376,5 +427,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbxPerfFilter;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.CheckBox chkConcessions;
+        private System.Windows.Forms.Button btnTickets;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtPrice;
     }
 }

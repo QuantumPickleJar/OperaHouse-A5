@@ -100,9 +100,9 @@ namespace OperaTesting
             deathShow.SellTickets(200); //sell out show
             belushiShow.SellTickets(10); //sell some tickets
             Assert.AreEqual(0, deathShow.NumAvailableTickets);
-            Assert.IsTrue(deathShow.IsSOldOut);
-            Assert.IsFalse(belushiShow.IsSOldOut);
-            Assert.IsFalse(shrek.IsSOldOut);
+            Assert.IsTrue(deathShow.IsSoldOut);
+            Assert.IsFalse(belushiShow.IsSoldOut);
+            Assert.IsFalse(shrek.IsSoldOut);
         }
 
         [TestMethod]
