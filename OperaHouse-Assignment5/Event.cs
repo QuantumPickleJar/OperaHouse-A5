@@ -19,7 +19,13 @@ namespace OperaHouse_Assignment5
         public Performer Performer { get; set; }// Textbox
         public Stage Stage { get; set; }        // Textbox
 
+        public double Price { get { return regularTicketPrice; } }
         public bool ConcessionSales { get; set; }
+
+        public void UpdatePrice(double newPrice)
+        {
+            regularTicketPrice = newPrice;
+        }
 
         public int NumAvailableTickets
         {
@@ -74,7 +80,7 @@ namespace OperaHouse_Assignment5
 
         public override string ToString()
         {
-            string result = Title + " by " + Performer + " on " + EventTime.ToShortDateString();
+            string result = Title + " by " + Performer.Name + " on " + EventTime.ToShortDateString();
             result += " at " + EventTime.ToShortTimeString() + ". Concessions: ";
             result += ConcessionSales ? "Yes. " : "No. ";
             result += "Tickets available: " + NumAvailableTickets;
