@@ -45,6 +45,7 @@ namespace OperaHouse_Assignment5
 
         public Event(string id, string title, Performer performer, int numTickets, double ticketPrice, DateTime eventTime, int durationMinutes, bool concessionSales, Stage stage)
         {
+            this.id = id;
             this.Stage = stage;
            //this = new Event(id, title, performer, numTickets, ticketPrice, eventTime, durationMinutes, concessionSales);
             this.Title = title;

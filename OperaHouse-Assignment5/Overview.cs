@@ -43,10 +43,12 @@ namespace OperaHouse_Assignment5
                 return;
 
             // remove the selected event from the list
-            Event target = events.Where(ev => ev.Title.Equals(ParseEventDetails())).First();
+            Event target = events.Where(ev => ev.Title.Equals(ParseEventDetails().Title)).First();
 
             if (events.Contains(target))
                 events.Remove(target);
+            // alternatively: 
+            // events.RemoveAt(lstEvents.SelectedIndex);
 
             RefreshEvents();
         }
@@ -121,7 +123,6 @@ namespace OperaHouse_Assignment5
             current.UpdatePrice(double.Parse(txtPrice.Text));
             current.Performer = cbxPerformer.SelectedItem as Performer;
 
-
             // if the number of available tickets was changed:
             if (!current.NumAvailableTickets.ToString().Equals(txtTickets.Text))
             {
@@ -155,7 +156,9 @@ namespace OperaHouse_Assignment5
                     current.tickets.Capacity = newTicketCap;
                 }
             }
+            MessageBox.Show($"The selected event {current.Title} has been successfully updated!", "Update successful");
             RefreshEvents();
+
         }
 
         private void chkConcessions_CheckedChanged(object sender, EventArgs e)
@@ -175,13 +178,13 @@ namespace OperaHouse_Assignment5
         private void btnDate_Click(object sender, EventArgs e)
         {
             events.Sort(new PerformerDateComparer());
-            RefreshEvents();
+            RefreshEvents(events);
         }
 
         private void btnTitle_Click(object sender, EventArgs e)
         {
             events.Sort(new TitleComparer());
-            RefreshEvents();
+            RefreshEvents(events);
 
         }
         private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
@@ -250,7 +253,7 @@ namespace OperaHouse_Assignment5
                 chkConcessions.Checked = selected.ConcessionSales;
                 btnSave.Enabled = true;
                 btnTickets.Enabled = true;
-                // RefreshModifiables();
+                RefreshModifiables();
             }
             else
             {
@@ -376,6 +379,8 @@ namespace OperaHouse_Assignment5
         /// behavior</returns>
         private Event ParseEventDetails()
         {
+            Performer thePerformer = cbxPerformer.SelectedItem as Performer;
+
             return new Event(
                                 (events.Count() + 1).ToString(),
                                 txtTitle.Text,
@@ -450,8 +455,17 @@ namespace OperaHouse_Assignment5
             if (cbxPerformer.SelectedIndex > -1)
             {
                 var selected = lstEvents.SelectedItem as Event;
-                results = events.Where(ev => ev.Performer.Name.Equals(selected.Performer.Name)).ToList();
-                RefreshEvents(results);
+                if (selected != null)
+                {
+                    results = events.Where(ev => ev.Performer.Name.Equals(selected.Performer.Name)).ToList();
+                    RefreshEvents(results);
+                }
+                else
+                {
+                    // this mannner safely tells the user that no events were found through non-verbose means
+                    results.Clear();
+                    RefreshEvents(results);
+                }
             }
         }
 

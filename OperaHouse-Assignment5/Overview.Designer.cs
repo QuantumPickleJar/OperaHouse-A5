@@ -49,7 +49,7 @@
             this.dtpEventTime = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTickets = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbxModifiers = new System.Windows.Forms.GroupBox();
             this.chkConcessions = new System.Windows.Forms.CheckBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -61,11 +61,14 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnTickets = new System.Windows.Forms.Button();
             this.gbxFilter.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbxModifiers.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstEvents
             // 
+            this.lstEvents.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lstEvents.FormattingEnabled = true;
             this.lstEvents.Location = new System.Drawing.Point(17, 44);
             this.lstEvents.Name = "lstEvents";
@@ -85,12 +88,16 @@
             // 
             // gbxFilter
             // 
+            this.gbxFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbxFilter.Controls.Add(this.chkOpenShows);
             this.gbxFilter.Controls.Add(this.chkPerformer);
             this.gbxFilter.Controls.Add(this.cbxPerfFilter);
             this.gbxFilter.Location = new System.Drawing.Point(312, 56);
+            this.gbxFilter.MaximumSize = new System.Drawing.Size(360, 60);
+            this.gbxFilter.MinimumSize = new System.Drawing.Size(180, 60);
             this.gbxFilter.Name = "gbxFilter";
-            this.gbxFilter.Size = new System.Drawing.Size(199, 59);
+            this.gbxFilter.Size = new System.Drawing.Size(199, 60);
             this.gbxFilter.TabIndex = 2;
             this.gbxFilter.TabStop = false;
             this.gbxFilter.Text = "Filter";
@@ -129,7 +136,7 @@
             // 
             // btnDate
             // 
-            this.btnDate.Location = new System.Drawing.Point(312, 27);
+            this.btnDate.Location = new System.Drawing.Point(349, 12);
             this.btnDate.Name = "btnDate";
             this.btnDate.Size = new System.Drawing.Size(75, 23);
             this.btnDate.TabIndex = 3;
@@ -139,7 +146,7 @@
             // 
             // btnTitle
             // 
-            this.btnTitle.Location = new System.Drawing.Point(393, 27);
+            this.btnTitle.Location = new System.Drawing.Point(430, 12);
             this.btnTitle.Name = "btnTitle";
             this.btnTitle.Size = new System.Drawing.Size(75, 23);
             this.btnTitle.TabIndex = 4;
@@ -151,11 +158,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(312, 5);
+            this.label2.Location = new System.Drawing.Point(298, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 17);
+            this.label2.Size = new System.Drawing.Size(57, 17);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Sort";
+            this.label2.Text = "Sort by:";
             // 
             // btnPlus
             // 
@@ -261,32 +268,35 @@
             this.txtTickets.TabIndex = 21;
             this.txtTickets.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTickets_KeyPress);
             // 
-            // groupBox1
+            // gbxModifiers
             // 
-            this.groupBox1.Controls.Add(this.chkConcessions);
-            this.groupBox1.Controls.Add(this.txtTitle);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtPrice);
-            this.groupBox1.Controls.Add(this.cbxStage);
-            this.groupBox1.Controls.Add(this.cbxPerformer);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.dtpEventTime);
-            this.groupBox1.Controls.Add(this.txtTickets);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.lblID);
-            this.groupBox1.Controls.Add(this.txtDuration);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.Performer);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(312, 127);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(203, 246);
-            this.groupBox1.TabIndex = 22;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Event Details";
+            this.gbxModifiers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbxModifiers.Controls.Add(this.chkConcessions);
+            this.gbxModifiers.Controls.Add(this.txtTitle);
+            this.gbxModifiers.Controls.Add(this.label7);
+            this.gbxModifiers.Controls.Add(this.txtPrice);
+            this.gbxModifiers.Controls.Add(this.cbxStage);
+            this.gbxModifiers.Controls.Add(this.cbxPerformer);
+            this.gbxModifiers.Controls.Add(this.label9);
+            this.gbxModifiers.Controls.Add(this.dtpEventTime);
+            this.gbxModifiers.Controls.Add(this.txtTickets);
+            this.gbxModifiers.Controls.Add(this.label10);
+            this.gbxModifiers.Controls.Add(this.label6);
+            this.gbxModifiers.Controls.Add(this.label3);
+            this.gbxModifiers.Controls.Add(this.lblID);
+            this.gbxModifiers.Controls.Add(this.txtDuration);
+            this.gbxModifiers.Controls.Add(this.label8);
+            this.gbxModifiers.Controls.Add(this.Performer);
+            this.gbxModifiers.Controls.Add(this.label4);
+            this.gbxModifiers.Controls.Add(this.label5);
+            this.gbxModifiers.Location = new System.Drawing.Point(312, 127);
+            this.gbxModifiers.MaximumSize = new System.Drawing.Size(400, 300);
+            this.gbxModifiers.MinimumSize = new System.Drawing.Size(200, 246);
+            this.gbxModifiers.Name = "gbxModifiers";
+            this.gbxModifiers.Size = new System.Drawing.Size(203, 246);
+            this.gbxModifiers.TabIndex = 22;
+            this.gbxModifiers.TabStop = false;
+            this.gbxModifiers.Text = "Event Details";
             // 
             // chkConcessions
             // 
@@ -392,20 +402,20 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnMinus);
             this.Controls.Add(this.btnPlus);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnTitle);
             this.Controls.Add(this.btnDate);
             this.Controls.Add(this.gbxFilter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lstEvents);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbxModifiers);
+            this.Controls.Add(this.label2);
             this.Name = "frmOverview";
             this.Text = "Grand Opera System";
             this.Load += new System.EventHandler(this.frmOverview_Load);
             this.gbxFilter.ResumeLayout(false);
             this.gbxFilter.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbxModifiers.ResumeLayout(false);
+            this.gbxModifiers.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -433,7 +443,7 @@
         private System.Windows.Forms.DateTimePicker dtpEventTime;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTickets;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbxModifiers;
         private System.Windows.Forms.ComboBox cbxStage;
         private System.Windows.Forms.ComboBox cbxPerformer;
         private System.Windows.Forms.TextBox txtTitle;
